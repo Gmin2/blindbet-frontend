@@ -1,65 +1,61 @@
-import Image from "next/image";
+import React from 'react'
+import Link from 'next/link'
+
+import { Button } from '@/components/ui/button'
+import { LogoCloud } from '@/components/logo-cloud'
+import Header from '@/components/header'
+import FooterSection from '@/components/footer'
+
+import { PlatformFeatures } from '@/app/(marketing)/(home)/sections/platform-features'
+import { AnalyticsFeatures } from '@/app/(marketing)/(home)/sections/analytics-features'
+import { TestimonialsSection } from '@/app/(marketing)/(home)/sections/testimonials-section'
+import { CallToAction } from '@/components/call-to-action'
+import { HeroIllustration } from '@/components/illustrations/hero-illustration'
+import { ProductDirectionFeaturesSection } from '@/app/(marketing)/(home)/sections/product-direction-features'
+import { MoreFeatures } from '@/app/(marketing)/(home)/sections/more-features'
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    return (
+        <>
+            <Header />
+            <main
+                role="main"
+                className="bg-muted [--color-primary:var(--color-indigo-500)]">
+                <section>
+                    <div className="bg-muted pt-32 lg:pt-44">
+                        <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-12">
+                            <div className="text-center">
+                                <h1 className="text-foreground mx-auto text-balance text-5xl font-semibold lg:text-6xl xl:text-7xl xl:tracking-tight">
+                                The <span>Encrypted Prediction Market</span> on Zema
+                            </h1>
+
+                            <div className="mx-auto mb-20 mt-4 max-w-lg">
+                                <p className="text-muted-foreground mb-6 text-balance text-lg lg:text-xl">Trade on future outcomes with full privacy. Your bets are encrypted, your strategy is yours.</p>
+
+                                <div className="bg-foreground/5 ring-border-illustration mx-auto w-fit rounded-lg p-1 ring-1">
+                                    <Button
+                                        asChild
+                                        className="[--color-primary:var(--color-indigo-500)]">
+                                        <Link href="/create">Start Trading</Link>
+                                    </Button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div>
+                            <HeroIllustration />
+                        </div>
+                    </div>
+                    {/* <LogoCloud /> */}
+                </section>
+                {/* <AnalyticsFeatures /> */}
+                <PlatformFeatures />
+                {/* <ProductDirectionFeaturesSection /> */}
+                <MoreFeatures />
+                {/* <TestimonialsSection /> */}
+                <CallToAction />
+            </main>
+            <FooterSection />
+        </>
+    )
 }

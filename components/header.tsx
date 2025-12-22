@@ -67,25 +67,25 @@ const moreFeatures: FeatureLink[] = [
 
 const marketCategories: FeatureLink[] = [
     {
-        href: '/markets/crypto',
+        href: '/markets?category=crypto',
         name: 'Crypto',
         description: 'BTC, ETH, SOL price predictions',
         icon: <Coins className="stroke-foreground fill-emerald-500/25" />,
     },
     {
-        href: '/markets/politics',
+        href: '/markets?category=politics',
         name: 'Politics',
         description: 'Elections and policy outcomes',
         icon: <Landmark className="stroke-foreground fill-blue-500/15" />,
     },
     {
-        href: '/markets/sports',
+        href: '/markets?category=sports',
         name: 'Sports',
         description: 'Match results and player stats',
         icon: <Trophy className="stroke-foreground fill-pink-500/15" />,
     },
     {
-        href: '/markets/pop-culture',
+        href: '/markets?category=pop-culture',
         name: 'Pop Culture',
         description: 'Awards, events, and trends',
         icon: <Star className="stroke-foreground fill-zinc-500/15" />,
@@ -108,7 +108,7 @@ const mobileLinks: MobileLink[] = [
         links: marketCategories,
     },
     { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Docs', href: '/docs' },
+    { name: 'Create Market', href: '/create' },
 ]
 
 export default function Header() {
@@ -341,6 +341,12 @@ const NavMenu = () => {
                             <div className="col-span-2 row-span-2 -mr-4 grid grid-rows-subgrid gap-1 pr-2">
                                 <span className="text-muted-foreground ml-2 text-xs">Categories</span>
                                 <ul className="mt-1 grid grid-cols-2 gap-2">
+                                    <ListItem
+                                        href="/markets"
+                                        title="All Markets"
+                                        description="Browse all available markets">
+                                        <Globe className="stroke-foreground fill-indigo-500/15" />
+                                    </ListItem>
                                     {marketCategories.map((category, index) => (
                                         <ListItem
                                             key={index}
@@ -379,11 +385,11 @@ const NavMenu = () => {
                         <Link href="/portfolio">Portfolio</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
-                <NavigationMenuItem value="docs">
+                <NavigationMenuItem value="create">
                     <NavigationMenuLink
                         asChild
                         className={navigationMenuTriggerStyle()}>
-                        <Link href="/docs">Docs</Link>
+                        <Link href="/create">Create Market</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>

@@ -13,11 +13,11 @@ interface MarketHeaderProps {
 
 export function MarketHeader({ market }: MarketHeaderProps) {
     return (
-        <div className="relative overflow-hidden rounded-3xl bg-card border border-border/50">
+        <div className="relative overflow-hidden bg-card border border-border/50">
             <div className="absolute inset-0 h-48 bg-gradient-to-b from-primary/10 to-transparent" />
             
             <div className="relative p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start md:items-center">
-                <div className="relative h-24 w-24 md:h-32 md:w-32 shrink-0 overflow-hidden rounded-2xl border-4 border-background shadow-xl">
+                <div className="relative h-24 w-24 md:h-32 md:w-32 shrink-0 overflow-hidden border-4 border-background shadow-xl">
                     <Image
                         src={market.image}
                         alt={market.question}
@@ -28,10 +28,10 @@ export function MarketHeader({ market }: MarketHeaderProps) {
                 
                 <div className="space-y-4 flex-1">
                     <div className="flex flex-wrap gap-2">
-                        <Badge variant="secondary" className="rounded-full px-3 py-1">
+                        <Badge variant="secondary" className="px-3 py-1">
                             {market.category}
                         </Badge>
-                        <Badge variant="outline" className="rounded-full px-3 py-1 border-primary/20 text-primary">
+                        <Badge variant="outline" className="px-3 py-1 border-primary/20 text-primary">
                             Ends {market.ending}
                         </Badge>
                     </div>

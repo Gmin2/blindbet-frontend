@@ -39,7 +39,7 @@ const features: FeatureLink[] = [
     {
         href: '/#verifiable-fairness',
         name: 'Verifiable Fairness',
-        description: 'ZK proofs ensure integrity',
+        description: 'FHEs ensure integrity',
         icon: <ShieldCheck className="stroke-foreground fill-green-500/15" />,
     },
 ]
@@ -141,7 +141,7 @@ export default function Header() {
             role="banner"
             data-state={isMobileMenuOpen ? 'active' : 'inactive'}
             {...(isScrolled && { 'data-scrolled': true })}
-            className="has-data-[state=open]:h-screen has-data-[state=open]:backdrop-blur has-data-[state=open]:bg-background/50 fixed inset-x-0 top-0 z-50">
+            className="has-data-[state=open]:h-screen has-data-[state=open]:backdrop-blur has-data-[state=open]:bg-background/50 sticky top-0 z-50 w-full">
             <div
                 className={cn(
                     'border-border-illustration absolute inset-x-0 top-0 z-50 h-14 border-b ring-1 ring-transparent transition-all duration-300',
@@ -149,7 +149,7 @@ export default function Header() {
                     'has-data-[state=open]:ring-foreground/5 has-data-[state=open]:border-transparent has-data-[state=open]:bg-card/75 has-data-[state=open]:shadow-lg has-data-[state=open]:backdrop-blur has-data-[state=open]:border-b has-data-[state=open]:shadow-black/10 has-data-[state=open]:h-[calc(var(--navigation-menu-viewport-height)+3.4rem)]',
                     'max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:bg-background/75 max-lg:in-data-[state=active]:backdrop-blur max-lg:h-14 max-lg:overflow-hidden max-lg:border-b'
                 )}>
-                <div className="mx-auto max-w-5xl px-6">
+                <div className="mx-auto w-full max-w-none px-6 lg:px-12">
                     <div className="relative flex flex-wrap items-center justify-between lg:py-3">
                         <div
                             aria-hidden
@@ -325,7 +325,7 @@ const NavMenu = () => {
                                         <NavigationMenuLink
                                             asChild
                                             className="text-foreground p-0 text-sm font-medium before:absolute before:inset-0 hover:bg-transparent focus:bg-transparent">
-                                            <Link href="#">Arcium Mainnet</Link>
+                                            <Link href="#">Zema Testnet</Link>
                                         </NavigationMenuLink>
                                         <p className="text-muted-foreground line-clamp-1 text-xs">BlindBet is now live on the first confidential L2.</p>
                                     </div>

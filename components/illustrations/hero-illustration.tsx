@@ -224,7 +224,7 @@ export const HeroIllustration = () => {
                                                 </div>
                                             </div>
                                             <div className="flex items-center justify-center px-2 py-1">
-                                                <span className="font-mono text-xs">API</span>
+                                                <span className="font-mono text-xs">APP</span>
                                             </div>
                                             <div className="grid grid-cols-[auto_1fr_auto] items-center gap-1">
                                                 <div className="flex size-2">
@@ -255,21 +255,21 @@ export const HeroIllustration = () => {
                                         className="absolute inset-0 mx-auto w-fit">
                                         <path
                                             d="M12 0L12 61.395C12 62.4251 11.6026 63.4155 10.8906 64.1599L2.10943 73.3401C1.3974 74.0845 0.999999 75.0749 0.999999 76.105L0.999998 84"
-                                            stroke="var(--color-white)"
+                                            stroke="var(--color-zinc-300)"
                                             className="drop-shadow-emerald-100 drop-shadow-xs animate-[beam-move_4.4s_linear_infinite]"
                                             strokeLinecap="round"
                                             strokeDasharray="42 278"
                                         />
                                         <path
                                             d="M24 0L24 63L24 74.5L24 84"
-                                            stroke="var(--color-white)"
+                                            stroke="var(--color-zinc-300)"
                                             className="drop-shadow-blue-100 drop-shadow-xs animate-[beam-move_5.4s_linear_infinite] delay-[1s]"
                                             strokeLinecap="round"
                                             strokeDasharray="42 278"
                                         />
                                         <path
                                             d="M47.0078 84L47.0078 52.3045C47.0078 51.2414 46.5846 50.222 45.8316 49.4714L37.1771 40.8452C36.4241 40.0947 36.0009 39.0753 36.0009 38.0121L36.0009 2.07412e-06"
-                                            stroke="var(--color-white)"
+                                            stroke="var(--color-zinc-300)"
                                             className="drop-shadow-purple-300 drop-shadow-xs animate-[beam-move_5.4s_linear_infinite] delay-[2s]"
                                             strokeLinecap="round"
                                             strokeDasharray="42 278"
@@ -309,21 +309,21 @@ export const HeroIllustration = () => {
                                         className="absolute inset-0 mx-auto w-fit">
                                         <path
                                             d="M12 84L12 22.605C12 21.5749 11.6026 20.5845 10.8906 19.8401L2.10943 10.6599C1.3974 9.91547 0.999999 8.92507 0.999999 7.89497L0.999998 4.80825e-07"
-                                            stroke="var(--color-white)"
+                                            stroke="var(--color-zinc-300)"
                                             strokeLinecap="round"
                                             strokeDasharray="42 278"
                                             className="drop-shadow-emerald-100 animate-[beam-move-down_4.4s_linear_infinite] drop-shadow-sm delay-[1s]"
                                         />
                                         <path
                                             d="M24 84L24 21L24 9.5L24 0"
-                                            stroke="var(--color-white)"
+                                            stroke="var(--color-zinc-300)"
                                             strokeLinecap="round"
                                             strokeDasharray="42 278"
                                             className="drop-shadow-blue-100 animate-[beam-move-down_5.4s_linear_infinite] drop-shadow-sm delay-[0.5s]"
                                         />
                                         <path
                                             d="M47.0078 0L47.0078 31.6955C47.0078 32.7586 46.5846 33.778 45.8316 34.5286L37.1771 43.1548C36.4241 43.9053 36.0009 44.9247 36.0009 45.9879L36.0009 84"
-                                            stroke="var(--color-white)"
+                                            stroke="var(--color-zinc-300)"
                                             strokeLinecap="round"
                                             strokeDasharray="42 278"
                                             className="drop-shadow-purple-300 animate-[beam-move-down_5.4s_linear_infinite] drop-shadow-sm delay-[2s]"

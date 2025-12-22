@@ -15,7 +15,7 @@ const data = [
 
 export function MarketChart() {
     return (
-        <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+        <Card className="border-border/50 bg-card/50 backdrop-blur-sm rounded-none">
             <CardHeader>
                 <CardTitle className="text-lg font-medium text-muted-foreground">Outcome Probability History</CardTitle>
             </CardHeader>
@@ -48,7 +48,7 @@ export function MarketChart() {
                                 tickFormatter={(value) => `${value}%`} 
                             />
                             <Tooltip 
-                                contentStyle={{ backgroundColor: '#1f2937', border: 'none', borderRadius: '8px' }}
+                                contentStyle={{ backgroundColor: '#1f2937', border: 'none', borderRadius: '0px' }}
                                 itemStyle={{ color: '#fff' }}
                             />
                             <Area 

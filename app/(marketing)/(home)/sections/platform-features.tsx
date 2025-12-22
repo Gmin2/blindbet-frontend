@@ -114,9 +114,10 @@ export function PlatformFeatures() {
                                 src={trendingMarkets[0].image} 
                                 alt="ETH" 
                                 fill
-                                className="absolute inset-0 object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
+                                className="absolute inset-0 object-cover opacity-60 saturate-50 transition-transform duration-500 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                            <div className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
                             
                             <div className="relative z-10 flex flex-col justify-end h-full">
                                 <span className="inline-block px-3 py-1 mb-4 text-xs font-medium text-white bg-blue-500/80 rounded-full w-fit backdrop-blur-sm">
@@ -136,9 +137,10 @@ export function PlatformFeatures() {
                                 src={trendingMarkets[1].image} 
                                 alt="BTC" 
                                 fill
-                                className="absolute inset-0 object-cover opacity-60 transition-transform duration-500 group-hover:scale-110"
+                                className="absolute inset-0 object-cover opacity-60 saturate-50 transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                            <div className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
                             
                             <div className="relative z-10 flex flex-col justify-end h-full">
                                 <span className="inline-block px-3 py-1 mb-4 text-xs font-medium text-white bg-orange-500/80 rounded-full w-fit backdrop-blur-sm">
@@ -158,9 +160,10 @@ export function PlatformFeatures() {
                                 src={trendingMarkets[2].image} 
                                 alt="Trump" 
                                 fill
-                                className="absolute inset-0 object-cover opacity-60 transition-transform duration-500 group-hover:scale-110"
+                                className="absolute inset-0 object-cover opacity-60 saturate-50 transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                            <div className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
                             
                             <div className="relative z-10 flex flex-col justify-end h-full">
                                 <span className="inline-block px-3 py-1 mb-4 text-xs font-medium text-white bg-red-500/80 rounded-full w-fit backdrop-blur-sm">
@@ -180,9 +183,10 @@ export function PlatformFeatures() {
                                 src={trendingMarkets[3].image} 
                                 alt="SOL" 
                                 fill
-                                className="absolute inset-0 object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
+                                className="absolute inset-0 object-cover opacity-60 saturate-50 transition-transform duration-500 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                            <div className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
                             
                             <div className="relative z-10 flex flex-col justify-end h-full">
                                 <span className="inline-block px-3 py-1 mb-4 text-xs font-medium text-white bg-purple-500/80 rounded-full w-fit backdrop-blur-sm">
@@ -202,9 +206,10 @@ export function PlatformFeatures() {
                                 src={trendingMarkets[4].image} 
                                 alt="Sports" 
                                 fill
-                                className="absolute inset-0 object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
+                                className="absolute inset-0 object-cover opacity-60 saturate-50 transition-transform duration-500 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                            <div className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
                             
                             <div className="relative z-10 flex flex-col justify-end h-full">
                                 <span className="inline-block px-3 py-1 mb-4 text-xs font-medium text-white bg-orange-600/80 rounded-full w-fit backdrop-blur-sm">
@@ -224,9 +229,10 @@ export function PlatformFeatures() {
                                 src={trendingMarkets[5].image} 
                                 alt="GPT-5" 
                                 fill
-                                className="absolute inset-0 object-cover opacity-60 transition-transform duration-500 group-hover:scale-110"
+                                className="absolute inset-0 object-cover opacity-60 saturate-50 transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                            <div className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
                             
                             <div className="relative z-10 flex flex-col justify-end h-full">
                                 <span className="inline-block px-3 py-1 mb-4 text-xs font-medium text-white bg-green-500/80 rounded-full w-fit backdrop-blur-sm">

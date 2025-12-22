@@ -12,7 +12,7 @@ export function BettingInterface() {
     const [amount, setAmount] = useState('')
 
     return (
-        <Card className="border-border/50 bg-card/50 backdrop-blur-sm h-fit sticky top-24">
+        <Card className="border-border/50 bg-card/50 backdrop-blur-sm h-fit sticky top-24 rounded-none">
             <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                     <span>Place Bet</span>
@@ -24,9 +24,9 @@ export function BettingInterface() {
             </CardHeader>
             <CardContent className="space-y-6">
                 <Tabs defaultValue="yes" onValueChange={(v) => setOutcome(v as 'yes' | 'no')} className="w-full">
-                    <TabsList className="grid w-full grid-cols-2">
-                        <TabsTrigger value="yes" className="data-[state=active]:bg-green-500/20 data-[state=active]:text-green-500">Yes</TabsTrigger>
-                        <TabsTrigger value="no" className="data-[state=active]:bg-red-500/20 data-[state=active]:text-red-500">No</TabsTrigger>
+                    <TabsList className="grid w-full grid-cols-2 rounded-none">
+                        <TabsTrigger value="yes" className="data-[state=active]:bg-green-500/20 data-[state=active]:text-green-500 rounded-none">Yes</TabsTrigger>
+                        <TabsTrigger value="no" className="data-[state=active]:bg-red-500/20 data-[state=active]:text-red-500 rounded-none">No</TabsTrigger>
                     </TabsList>
                 </Tabs>
 
@@ -38,10 +38,10 @@ export function BettingInterface() {
                             placeholder="0.00" 
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
-                            className="pr-16 text-lg font-medium"
+                            className="pr-16 text-lg font-medium rounded-none"
                         />
                         <div className="absolute right-3 top-1/2 -translate-y-1/2 flex gap-2">
-                            <Button variant="ghost" size="sm" className="h-6 px-2 text-xs" onClick={() => setAmount('100')}>MAX</Button>
+                            <Button variant="ghost" size="sm" className="h-6 px-2 text-xs rounded-none" onClick={() => setAmount('100')}>MAX</Button>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ export function BettingInterface() {
                 </div>
 
                 <Button 
-                    className={`w-full text-lg font-semibold h-12 ${
+                    className={`w-full text-lg font-semibold h-12 rounded-none ${
                         outcome === 'yes' 
                             ? 'bg-green-600 hover:bg-green-700 text-white shadow-lg shadow-green-900/20' 
                             : 'bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-900/20'

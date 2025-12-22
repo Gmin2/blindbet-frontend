@@ -72,7 +72,7 @@ export function MoreFeatures() {
                                     <ShieldCheck className="h-6 w-6 text-primary" />
                                 </div>
                                 <h3 className="text-foreground text-xl font-semibold">Verifiable Fairness</h3>
-                                <p className="text-muted-foreground mt-3">ZK proofs ensure that market resolution is tamper-proof and mathematically verifiable.</p>
+                                <p className="text-muted-foreground mt-3">FHE ensure that market resolution is tamper-proof and mathematically verifiable.</p>
                             </div>
                             <FairnessChart />
                         </Card>

@@ -95,7 +95,6 @@ const marketCategories: FeatureLink[] = [
 const resourceLinks: FeatureLink[] = [
     { name: 'How it Works', href: '/docs/how-it-works', icon: <BookOpen className="stroke-foreground fill-purple-500/15" /> },
     { name: 'FAQ', href: '/docs/faq', icon: <HelpCircle className="stroke-foreground fill-red-500/15" /> },
-    { name: 'Blog', href: '/blog', icon: <Notebook className="stroke-foreground fill-zinc-500/15" /> },
 ]
 
 const mobileLinks: MobileLink[] = [

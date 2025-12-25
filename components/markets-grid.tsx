@@ -3,13 +3,21 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronRight } from 'lucide-react'
-import { Post } from '@/types/post'
+import { Market } from '@/types/market'
 import { formatDate } from '@/lib/format-date'
 import { cn } from '@/lib/utils'
 
-export function MarketsGrid({ posts }: { posts: Post[] }) {
-    const moreArticles = posts.slice(2)
-    const lastArticles = posts.slice(posts.length - 3)
+export function MarketsGrid({ markets }: { markets: Market[] }) {
+    const moreMarkets = markets.slice(2)
+    const lastMarkets = markets.slice(markets.length - 3)
+
+    // Helper to format volume
+    const formatVolume = (volume: bigint) => {
+        const val = Number(volume) / 1_000_000 // Assuming 6 decimals like USDC
+        if (val >= 1_000_000) return `$${(val / 1_000_000).toFixed(1)}M`
+        if (val >= 1_000) return `$${(val / 1_000).toFixed(1)}K`
+        return `$${val.toFixed(0)}`
+    }
 
     return (
         <div className="mx-auto max-w-6xl px-6 lg:px-12">
@@ -28,9 +36,9 @@ export function MarketsGrid({ posts }: { posts: Post[] }) {
                 />
 
                 <div className="space-y-12">
-                    {posts.slice(0, 2).map((article, index) => (
+                    {markets.slice(0, 2).map((market, index) => (
                         <div
-                            key={`${article.title}-${article.date}-${index}`}
+                            key={`${market.id}-${index}`}
                             className="group relative">
                             <div
                                 aria-hidden
@@ -39,8 +47,8 @@ export function MarketsGrid({ posts }: { posts: Post[] }) {
                             <article className={cn('bg-card/75 ring-foreground/3 hover:bg-card/50 focus-within:bg-card/50 group relative gap-2 border border-transparent shadow-md ring-1 duration-200 sm:grid sm:grid-cols-3')}>
                                 <div className="before:border-border-illustration relative m-0.5 aspect-square overflow-hidden before:absolute before:inset-0 before:border">
                                     <Image
-                                        src={article.image}
-                                        alt={article.title}
+                                        src={market.image}
+                                        alt={market.question}
                                         width={6394}
                                         height={4500}
                                         className="h-full w-full object-cover"
@@ -53,40 +61,36 @@ export function MarketsGrid({ posts }: { posts: Post[] }) {
                                 <div className="col-span-2 flex flex-col gap-3 p-6">
                                     <time
                                         className="text-muted-foreground text-sm"
-                                        dateTime={new Date(article.date).toISOString()}>
-                                        Ends: {formatDate(article.date)}
+                                        dateTime={new Date(Number(market.bettingDeadline) * 1000).toISOString()}>
+                                        Ends: {formatDate(new Date(Number(market.bettingDeadline) * 1000).toISOString())}
                                     </time>
                                     <h2 className="text-foreground text-balance text-lg font-semibold md:text-xl">
                                         <Link
-                                            href={article.href}
+                                            href={`/market/${market.id}`}
                                             className="before:absolute before:inset-0">
-                                            {article.title}
+                                            {market.question}
                                         </Link>
                                     </h2>
-                                    <p className="text-muted-foreground">{article.description}</p>
+                                    <p className="text-muted-foreground">Volume: {formatVolume(market.totalVolume)}</p>
 
                                     <div className="mt-auto grid grid-cols-[1fr_auto] items-end gap-2 pt-4">
                                         <div className="space-y-2">
-                                            {article.authors.map((author, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="grid grid-cols-[auto_1fr] items-center gap-2">
-                                                    <div className="ring-border-illustration bg-card aspect-square size-6 overflow-hidden border border-transparent shadow-md shadow-black/15 ring-1">
-                                                        <Image
-                                                            src={author.image}
-                                                            alt={author.name}
-                                                            width={460}
-                                                            height={460}
-                                                            className="size-full object-cover"
-                                                        />
-                                                    </div>
-                                                    <span className="text-muted-foreground line-clamp-1 text-sm">{author.name}</span>
+                                            <div className="grid grid-cols-[auto_1fr] items-center gap-2">
+                                                <div className="ring-border-illustration bg-card aspect-square size-6 overflow-hidden border border-transparent shadow-md shadow-black/15 ring-1">
+                                                    <Image
+                                                        src="https://github.com/shadcn.png"
+                                                        alt="BlindBet Protocol"
+                                                        width={460}
+                                                        height={460}
+                                                        className="size-full object-cover"
+                                                    />
                                                 </div>
-                                            ))}
+                                                <span className="text-muted-foreground line-clamp-1 text-sm">BlindBet Protocol</span>
+                                            </div>
                                         </div>
                                         <div className="flex h-6 items-center">
                                             <span
-                                                aria-label={`Trade ${article.title}`}
+                                                aria-label={`Trade ${market.question}`}
                                                 className="text-primary group-hover:text-foreground flex items-center gap-1 text-sm font-medium transition-colors duration-200">
                                                 Trade
                                                 <ChevronRight
@@ -104,8 +108,8 @@ export function MarketsGrid({ posts }: { posts: Post[] }) {
                 </div>
             </div>
 
-            {/* More Articles Grid */}
-            {moreArticles.length > 0 && (
+            {/* More Markets Grid */}
+            {moreMarkets.length > 0 && (
                 <div className="mt-12">
                     <div className="relative">
                         <div
@@ -129,50 +133,46 @@ export function MarketsGrid({ posts }: { posts: Post[] }) {
                             <h2 className="text-foreground text-xs font-medium uppercase">More Markets</h2>
                         </div>
                         <div className="grid gap-x-2 sm:grid-cols-2 lg:grid-cols-3">
-                            {moreArticles.map((article, index) => (
+                            {moreMarkets.map((market, index) => (
                                 <article
-                                    key={article.slug}
-                                    className={cn('hover:bg-card focus-within:bg-card group relative row-span-2 grid grid-rows-subgrid gap-4 p-6 duration-200', index < moreArticles.length - lastArticles.length && 'border-b')}>
+                                    key={market.id.toString()}
+                                    className={cn('hover:bg-card focus-within:bg-card group relative row-span-2 grid grid-rows-subgrid gap-4 p-6 duration-200', index < moreMarkets.length - lastMarkets.length && 'border-b')}>
                                     <div className="space-y-3">
                                         <time
                                             className="text-muted-foreground block text-sm"
-                                            dateTime={new Date(article.date).toISOString()}>
-                                            Ends: {formatDate(article.date)}
+                                            dateTime={new Date(Number(market.bettingDeadline) * 1000).toISOString()}>
+                                            Ends: {formatDate(new Date(Number(market.bettingDeadline) * 1000).toISOString())}
                                         </time>
                                         <h3 className="text-foreground text-lg font-semibold">
                                             <Link
-                                                href={article.href}
+                                                href={`/market/${market.id}`}
                                                 className="before:absolute before:inset-0">
-                                                {article.title}
+                                                {market.question}
                                             </Link>
                                         </h3>
-                                        <p className="text-muted-foreground">{article.description}</p>
+                                        <p className="text-muted-foreground">Volume: {formatVolume(market.totalVolume)}</p>
                                     </div>
 
                                     <div className="grid grid-cols-[1fr_auto] items-end gap-2 self-end pt-4">
                                         <div className="space-y-2">
-                                            {article.authors.map((author, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="grid grid-cols-[auto_1fr] items-center gap-2">
-                                                    <div className="ring-border-illustration bg-card aspect-square size-6 overflow-hidden border border-transparent shadow-md shadow-black/15 ring-1">
-                                                        <img
-                                                            src={author.image}
-                                                            alt={author.name}
-                                                            width={460}
-                                                            height={460}
-                                                            className="size-full object-cover"
-                                                            loading="lazy"
-                                                            decoding="async"
-                                                        />
-                                                    </div>
-                                                    <span className="text-muted-foreground line-clamp-1 text-sm">{author.name}</span>
+                                            <div className="grid grid-cols-[auto_1fr] items-center gap-2">
+                                                <div className="ring-border-illustration bg-card aspect-square size-6 overflow-hidden border border-transparent shadow-md shadow-black/15 ring-1">
+                                                    <img
+                                                        src="https://github.com/shadcn.png"
+                                                        alt="BlindBet Protocol"
+                                                        width={460}
+                                                        height={460}
+                                                        className="size-full object-cover"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                    />
                                                 </div>
-                                            ))}
+                                                <span className="text-muted-foreground line-clamp-1 text-sm">BlindBet Protocol</span>
+                                            </div>
                                         </div>
                                         <div className="flex h-6 items-center">
                                             <span
-                                                aria-label={`Trade ${article.title}`}
+                                                aria-label={`Trade ${market.question}`}
                                                 className="text-primary group-hover:text-foreground flex items-center gap-1 text-sm font-medium transition-colors duration-200">
                                                 Trade
                                                 <ChevronRight

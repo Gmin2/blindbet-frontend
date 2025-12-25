@@ -32,7 +32,7 @@ export const CtaIllustration = () => {
                                         </div>
                                     </div>
 
-                                    <span className="w-full pt-6 font-mono text-[10px] uppercase">Experience seamless payments.</span>
+                                    <span className="w-full pt-6 font-mono text-[10px] uppercase">Experience seamless betting.</span>
                                 </div>
                             </div>
                             <div className="grid grid-cols-2 grid-rows-2 gap-2 rounded-l-2xl border-y border-l p-2">
@@ -166,7 +166,7 @@ export const CtaIllustration = () => {
                                         </div>
                                     </div>
 
-                                    <span className="w-full pt-6 font-mono text-[10px] uppercase">Experience seamless payments.</span>
+                                    <span className="w-full pt-6 font-mono text-[10px] uppercase">Experience seamless betting.</span>
                                 </div>
 
                                 <div>

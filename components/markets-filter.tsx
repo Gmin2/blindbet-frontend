@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils'
 import { MarketsCommandDialog } from '@/components/markets-command'
-import { Post } from '@/types/post'
+import { Market } from '@/types/market'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
@@ -13,7 +13,7 @@ export type Category = {
 
 export type MarketsFilterProps = {
     categories: Category[]
-    posts: Post[]
+    posts: Market[]
     activeCategory: string
     onCategoryChange: (category: string) => void
 }
@@ -47,7 +47,7 @@ export const MarketsFilter = ({ categories, posts, activeCategory, onCategoryCha
                 <div className="flex gap-1 max-md:pr-3">
                     <MarketsCommandDialog
                         categories={categories}
-                        posts={posts}
+                        markets={posts}
                     />
                 </div>
             </div>

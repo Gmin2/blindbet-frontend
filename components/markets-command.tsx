@@ -2,17 +2,18 @@
 
 import * as React from 'react'
 import { Hexagon, Search, ArrowRight } from 'lucide-react'
-import { Category, Post } from '@/types/post'
+import { Category } from '@/components/markets-filter'
+import { Market } from '@/types/market'
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from '@/components/ui/command'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 
 interface MarketsCommandDialogProps {
     categories: Category[]
-    posts: Post[]
+    markets: Market[]
 }
 
-export function MarketsCommandDialog({ categories, posts }: MarketsCommandDialogProps) {
+export function MarketsCommandDialog({ categories, markets }: MarketsCommandDialogProps) {
     const [open, setOpen] = React.useState(false)
     const router = useRouter()
 
@@ -74,17 +75,17 @@ export function MarketsCommandDialog({ categories, posts }: MarketsCommandDialog
                     <CommandSeparator />
 
                     <CommandGroup heading="Markets">
-                        {posts.slice(0, 10).map((post) => (
+                        {markets.slice(0, 10).map((market) => (
                             <CommandItem
-                                key={post.slug}
+                                key={market.id.toString()}
                                 onSelect={() => {
-                                    router.push(post.href)
+                                    router.push(`/market/${market.id}`)
                                     setOpen(false)
                                 }}>
                                 <ArrowRight className="not-in-data-[selected=true]:opacity-50" />
                                 <div className="flex flex-col">
-                                    <span className="line-clamp-1">{post.title}</span>
-                                    <span className="text-muted-foreground line-clamp-1 hidden text-xs">{post.description}</span>
+                                    <span className="line-clamp-1">{market.question}</span>
+                                    <span className="text-muted-foreground line-clamp-1 hidden text-xs">Volume: {market.totalVolume.toString()}</span>
                                 </div>
                             </CommandItem>
                         ))}

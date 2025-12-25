@@ -1,10 +1,11 @@
 import { Signature } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
-export const DocumentIllustation = () => {
+export const DocumentIllustation = ({ className }: { className?: string }) => {
     return (
         <div
             aria-hidden
-            className="bg-background w-16 space-y-2 rounded-md p-2 shadow-md [--color-border:color-mix(in_oklab,var(--color-foreground)15%,transparent)]">
+            className={cn("bg-background w-16 space-y-2 rounded-md p-2 shadow-md [--color-border:color-mix(in_oklab,var(--color-foreground)15%,transparent)]", className)}>
             <div className="flex items-center gap-1">
                 <div className="bg-foreground/15 size-2.5 rounded-full"></div>
                 <div className="bg-foreground/15 h-[3px] w-4 rounded-full"></div>
